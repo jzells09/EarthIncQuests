@@ -1,5 +1,9 @@
 {
   "item.earthincquests.broken_icarus_boots": "Broken Icarus Boots",
+  "item.earthincquests.icarus_charm": "Icarus Charm",
+  "item.earthincquests.legendary_cookbook": "The Legendary Cook Book",
 
-  "tooltip.earthincquests.brokenarmor": "\u00A78Deep potential lies within"
+  "tooltip.earthincquests.brokenarmor": "\u00A78Deep potential lies within",
+  "tooltip.earthincquests.cookbook": "\u00A78You won't ever need to eat again if you keep this on you",
+  "tooltip.earthincquests.icaruscharm": "\u00A78Allows you to fly if you aren't wearing any armor"
 }
