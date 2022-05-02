@@ -29,6 +29,9 @@ public class ModItems {
     public static final RegistryObject<Item> FINAL_ICARUS_CHARM = ITEMS.register("final_icarus_charm",
             () -> new FinalIcarusCharm(new Item.Properties().maxStackSize(1).group(ItemGroup.MISC).rarity(Rarity.UNCOMMON)));
 
+    public static final RegistryObject<Item> NETHERITE_REWARD_MEDAL = ITEMS.register("netherite_reward_medal",
+            () -> new Item(new Item.Properties().maxStackSize(64).group(ItemGroup.MISC)));
+
     public static final RegistryObject<Item> GOLD_REWARD_MEDAL = ITEMS.register("gold_reward_medal",
             () -> new Item(new Item.Properties().maxStackSize(64).group(ItemGroup.MISC).rarity(Rarity.UNCOMMON)));
 
