@@ -1,14 +1,10 @@
 package com.earthinc.earthincquests.item.armor;
 
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -20,7 +16,6 @@ import top.theillusivec4.curios.api.type.capability.ICurioItem;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.Objects;
 
 public class IcarusCharm extends Item implements ICurioItem {
 
@@ -29,33 +24,48 @@ public class IcarusCharm extends Item implements ICurioItem {
     }
 
 
+    @Override
+    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
 
+        LivingEntity livingEntity = slotContext.getWearer();
+        if (livingEntity instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) livingEntity;
+            player.abilities.allowFlying = true;
+            player.sendPlayerAbilities();
+        }
+    }
 
     @Override
     public void curioTick(String identifier, int index, LivingEntity livingEntity, ItemStack stack) {
-        PlayerEntity player = (PlayerEntity) livingEntity;
-        if(Objects.equals(player.inventory.armorInventory, NonNullList.withSize(4, ItemStack.EMPTY))){
-            player.abilities.allowFlying = true;
-        } else {
 
-            player.abilities.allowFlying = false;
-            player.abilities.isFlying = false;
+
+        if(livingEntity instanceof PlayerEntity){
+            PlayerEntity player = (PlayerEntity) livingEntity;
+            if(!player.abilities.allowFlying){
+                player.abilities.allowFlying = true;
+                player.sendPlayerAbilities();
+            } else if(!player.inventory.armorInventory.equals(NonNullList.withSize(4, ItemStack.EMPTY))) {
+                player.abilities.allowFlying = false;
+                player.abilities.isFlying = false;
+                player.sendPlayerAbilities();
+            }
+
+
         }
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
-        PlayerEntity player = (PlayerEntity) entityIn;
-        if(!Objects.equals(player.inventory.armorInventory, NonNullList.withSize(4, ItemStack.EMPTY))){
+    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
+
+        LivingEntity livingEntity = slotContext.getWearer();
+        if(livingEntity instanceof PlayerEntity){
+            PlayerEntity player = (PlayerEntity) livingEntity;
             player.abilities.allowFlying = false;
             player.abilities.isFlying = false;
+            player.sendPlayerAbilities();
+
         }
-
-
-
     }
-
-
 
     @Override
     @OnlyIn(Dist.CLIENT)

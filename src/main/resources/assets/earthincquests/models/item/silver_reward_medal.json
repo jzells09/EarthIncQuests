@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "earthincquests:item/silver_reward_medal"
+  }
+}
