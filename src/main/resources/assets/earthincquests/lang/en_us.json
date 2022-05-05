@@ -1,13 +1,22 @@
 {
   "item.earthincquests.broken_icarus_boots": "Broken Icarus Boots",
   "item.earthincquests.icarus_charm": "Icarus Charm",
-  "item.earthincquests.final_icarus_charm": "Final_Icarus Charm",
+  "item.earthincquests.final_icarus_charm": "Final Icarus Charm",
   "item.earthincquests.legendary_cookbook": "The Legendary Cook Book",
 
   "item.earthincquests.netherite_reward_medal": "Netherite Reward Medal",
   "item.earthincquests.gold_reward_medal": "Gold Reward Medal",
   "item.earthincquests.silver_reward_medal": "Silver Reward Medal",
   "item.earthincquests.bronze_reward_medal": "Bronze Reward Medal",
+
+  "block.earthincquests.bronze_trophy": "Bronze Trophy",
+  "block.earthincquests.silver_trophy": "Silver Trophy",
+  "block.earthincquests.gold_trophy": "Gold Trophy",
+  "block.earthincquests.netherite_trophy": "Netherite Trophy",
+  "block.earthincquests.tytrophy": "Thank You Trophy",
+  "block.earthincquests.crash_trophy": "Crash Trophy",
+  "block.earthincquests.build_trophy": "Build Trophy",
+
 
   "tooltip.earthincquests.brokenarmor": "\u00A78Deep potential lies within",
   "tooltip.earthincquests.cookbook": "\u00A78You won't ever need to eat again if you keep this on you",

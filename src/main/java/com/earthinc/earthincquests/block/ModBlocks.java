@@ -1,7 +1,7 @@
 package com.earthinc.earthincquests.block;
 
 import com.earthinc.earthincquests.EarthIncQuests;
-import com.earthinc.earthincquests.block.blocks.TYTrophy;
+import com.earthinc.earthincquests.block.blocks.TrophyBlock;
 import com.earthinc.earthincquests.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -23,8 +23,33 @@ public class ModBlocks {
             = DeferredRegister.create(ForgeRegistries.BLOCKS, EarthIncQuests.MOD_ID);
 
     public static final RegistryObject<Block> TY_TROPHY = registerBlock("tytrophy",
-            () -> new TYTrophy(AbstractBlock.Properties.create(Material.IRON)
-                    .harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(2f),null));
+            () -> new TrophyBlock(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(.2f)));
+
+    public static final RegistryObject<Block> CRASH_TROPHY = registerBlock("crash_trophy",
+            () -> new TrophyBlock(AbstractBlock.Properties.create(Material.SHULKER)
+                    .harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(.2f)));
+
+    public static final RegistryObject<Block> BUILD_TROPHY = registerBlock("build_trophy",
+            () -> new TrophyBlock(AbstractBlock.Properties.create(Material.ROCK)
+                    .harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(.2f)));
+
+    public static final RegistryObject<Block> BRONZE_TROPHY = registerBlock("bronze_trophy",
+            () -> new TrophyBlock(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(.2f)));
+
+    public static final RegistryObject<Block> SILVER_TROPHY = registerBlock("silver_trophy",
+            () -> new TrophyBlock(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(.2f)));
+
+    public static final RegistryObject<Block> GOLD_TROPHY = registerBlock("gold_trophy",
+            () -> new TrophyBlock(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(.2f)));
+
+    public static final RegistryObject<Block> NETHERITE_TROPHY = registerBlock("netherite_trophy",
+            () -> new TrophyBlock(AbstractBlock.Properties.create(Material.IRON)
+                    .harvestLevel(1).harvestTool(ToolType.PICKAXE).hardnessAndResistance(.2f)));
+
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
